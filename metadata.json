@@ -1,0 +1,5 @@
+{
+  "name": "Picture Puzzle Game",
+  "description": "An interactive game for a game master to host a 'guess the person' picture puzzle. The app displays an image obscured by a grid of tiles. The game master can reveal tiles one by one until players guess the person, then move to the next image.",
+  "requestFramePermissions": []
+}
