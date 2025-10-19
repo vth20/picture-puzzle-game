@@ -6,7 +6,7 @@ import GameControls from './components/GameControls';
 import { IMAGE_URLS, GRID_OPTIONS } from './constants';
 
 const App: React.FC = () => {
-  const [gridSize, setGridSize] = useState<number>(GRID_OPTIONS[1]); // Default to 4x4
+  const [gridSize, setGridSize] = useState<number>(GRID_OPTIONS[3]); // Default to 4x4
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [revealedTiles, setRevealedTiles] = useState<boolean[][]>([]);
 
