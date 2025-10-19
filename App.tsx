@@ -91,6 +91,8 @@ const App: React.FC = () => {
         handleNextImage();
       } else if (event.key === 'ArrowLeft') {
         handleBackImage();
+      } else if (event.key === 'Enter') {
+        handleShowOriginal();
       }
     };
 
