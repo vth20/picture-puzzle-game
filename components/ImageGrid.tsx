@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FullscreenEnterIcon, FullscreenExitIcon } from './icons';
+import { TData } from '@/constants';
 
 interface ImageGridProps {
-  imageUrl: string;
+  imageUrl: TData;
   gridSize: number;
   revealedTiles: boolean[][];
   onTileClick: (row: number, col: number) => void;
@@ -30,7 +31,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ imageUrl, gridSize, revealedTiles
 
     if (!document.fullscreenElement) {
       containerRef.current.requestFullscreen().catch(err => {
-        alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+        console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
       });
     } else {
       document.exitFullscreen();
@@ -39,7 +40,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ imageUrl, gridSize, revealedTiles
 
   return (
     <div ref={containerRef} className="relative w-full aspect-square max-w-2xl mx-auto rounded-lg overflow-hidden shadow-2xl shadow-cyan-500/10 bg-black">
-      <img src={imageUrl} alt="Puzzle" className="absolute inset-0 w-full h-full object-contain" />
+      <img src={imageUrl.image} alt="Puzzle" className="absolute inset-0 w-full h-full object-contain" />
       <div
         className="absolute inset-0 grid"
         style={{ gridTemplateColumns: gridTemplate, gridTemplateRows: gridTemplate }}
